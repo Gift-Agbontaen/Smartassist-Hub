@@ -1,762 +1,1872 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartassist Hub | T-SMAH - Premium Graphic Design & Virtual Assistance</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Smartassist Hub | T-SMAH - Premium Graphic Design & Virtual Assistance
+    </title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            brown: '#5f342d',
-                            cream: '#edd4be',
-                            creamLight: '#fcf8f4',
-                            dark: '#2c1511',
-                            grey: '#f4f4f4'
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                brown: "#5f342d",
+                cream: "#edd4be",
+                creamLight: "#fcf8f4",
+                dark: "#2c1511",
+                grey: "#f4f4f4",
+              },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        /* Custom scrollbar matching brand colors */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #fcf8f4;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #5f342d;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2c1511;
-        }
+      /* Custom scrollbar matching brand colors */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fcf8f4;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #5f342d;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2c1511;
+      }
     </style>
-</head>
-<body class="font-sans bg-brand-creamLight text-brand-dark antialiased">
-
+  </head>
+  <body class="font-sans bg-brand-creamLight text-brand-dark antialiased">
     <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-creamLight/90 backdrop-blur-md border-b border-brand-cream/30 transition-all duration-300" id="main-header">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-brand-brown flex items-center justify-center text-brand-cream font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    T
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif font-black text-xl tracking-tight text-brand-brown">Smartassist Hub</span>
-                    <span class="text-[10px] tracking-[0.2em] font-bold text-brand-brown/70 -mt-1">T-SMAH</span>
-                </div>
-            </a>
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-brand-creamLight/90 backdrop-blur-md border-b border-brand-cream/30 transition-all duration-300"
+      id="main-header"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a href="#" class="flex items-center space-x-3 group">
+          <!-- Self-Healing Logo Loader with fallback graphic -->
+          <div
+            class="relative w-10 h-10 rounded-xl overflow-hidden bg-brand-brown flex items-center justify-center text-brand-cream font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform"
+          >
+            <img
+              src="assets/logo.png"
+              alt="T-SMAH Logo"
+              class="absolute inset-0 w-full h-full object-contain bg-brand-creamLight"
+              onerror="this.style.opacity = '0'"
+            />
+            <span class="relative z-0">T</span>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-serif font-black text-xl tracking-tight text-brand-brown"
+              >Smartassist Hub</span
+            >
+            <span
+              class="text-[10px] tracking-[0.2em] font-bold text-brand-brown/70 -mt-1"
+              >T-SMAH</span
+            >
+          </div>
+        </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors">Services</a>
-                <a href="#portfolio" class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors">Portfolio</a>
-                <a href="#quote-calculator" class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors">Estimate</a>
-                <a href="#future-vision" class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors">Future Vision</a>
-                <a href="#assistant-playground" class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Meet SMAH-E
-                </a>
-            </nav>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="#services"
+            class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors"
+            >Services & Pricing</a
+          >
+          <a
+            href="#portfolio"
+            class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors"
+            >Portfolio</a
+          >
+          <a
+            href="#why-choose-us"
+            class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors"
+            >Why Us</a
+          >
+          <a
+            href="#quote-calculator"
+            class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors"
+            >Estimator</a
+          >
+          <a
+            href="#future-vision"
+            class="text-sm font-semibold text-brand-brown/80 hover:text-brand-brown transition-colors"
+            >Future Vision</a
+          >
+        </nav>
 
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-brown text-brand-cream text-sm font-bold shadow-md hover:bg-brand-dark hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                    Start a Project
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-brand-brown focus:outline-none p-2" aria-label="Toggle Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+        <!-- Currency Switcher and Get Started -->
+        <div class="hidden md:flex items-center space-x-4">
+          <div
+            class="inline-flex bg-brand-brown/5 p-1 rounded-xl border border-brand-brown/10"
+          >
+            <button
+              onclick="toggleCurrency('NGN')"
+              id="btn-curr-ngn-nav"
+              class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream"
+            >
+              ₦ NGN
             </button>
+            <button
+              onclick="toggleCurrency('USD')"
+              id="btn-curr-usd-nav"
+              class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown"
+            >
+              USD ($)
+            </button>
+          </div>
+          <!-- Updated button to trigger your correct Google Form Link -->
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-full bg-brand-brown text-brand-cream text-sm font-bold shadow-md hover:bg-brand-dark hover:shadow-lg hover:-translate-y-0.5 transition-all"
+          >
+            Get Started
+          </a>
         </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-creamLight border-b border-brand-cream/50 px-6 py-6 space-y-4 shadow-xl">
-            <a href="#services" class="block text-base font-semibold text-brand-brown" onclick="toggleMenu()">Services</a>
-            <a href="#portfolio" class="block text-base font-semibold text-brand-brown" onclick="toggleMenu()">Portfolio</a>
-            <a href="#quote-calculator" class="block text-base font-semibold text-brand-brown" onclick="toggleMenu()">Estimate</a>
-            <a href="#future-vision" class="block text-base font-semibold text-brand-brown" onclick="toggleMenu()">Future Vision</a>
-            <a href="#assistant-playground" class="block text-base font-semibold text-brand-brown flex items-center gap-1.5" onclick="toggleMenu()">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Meet SMAH-E
-            </a>
-            <a href="#contact" class="block w-full text-center py-3 rounded-xl bg-brand-brown text-brand-cream font-bold" onclick="toggleMenu()">
-                Start a Project
-            </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-brand-brown focus:outline-none p-2"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-brand-creamLight border-b border-brand-cream/50 px-6 py-6 space-y-4 shadow-xl"
+      >
+        <!-- Mobile Currency Switcher -->
+        <div
+          class="flex items-center justify-between pb-2 border-b border-brand-cream/30"
+        >
+          <span class="text-xs font-bold text-brand-brown"
+            >Display Currency:</span
+          >
+          <div
+            class="inline-flex bg-brand-brown/5 p-1 rounded-xl border border-brand-brown/10"
+          >
+            <button
+              onclick="toggleCurrency('NGN')"
+              id="btn-curr-ngn-mob"
+              class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream"
+            >
+              ₦ NGN
+            </button>
+            <button
+              onclick="toggleCurrency('USD')"
+              id="btn-curr-usd-mob"
+              class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown"
+            >
+              USD ($)
+            </button>
+          </div>
         </div>
+        <a
+          href="#services"
+          class="block text-base font-semibold text-brand-brown"
+          onclick="toggleMenu()"
+          >Services & Pricing</a
+        >
+        <a
+          href="#portfolio"
+          class="block text-base font-semibold text-brand-brown"
+          onclick="toggleMenu()"
+          >Portfolio</a
+        >
+        <a
+          href="#why-choose-us"
+          class="block text-base font-semibold text-brand-brown"
+          onclick="toggleMenu()"
+          >Why Us</a
+        >
+        <a
+          href="#quote-calculator"
+          class="block text-base font-semibold text-brand-brown"
+          onclick="toggleMenu()"
+          >Estimator</a
+        >
+        <a
+          href="#future-vision"
+          class="block text-base font-semibold text-brand-brown"
+          onclick="toggleMenu()"
+          >Future Vision</a
+        >
+        <!-- Updated button to trigger your correct Google Form Link -->
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full text-center py-3 rounded-xl bg-brand-brown text-brand-cream font-bold"
+          onclick="toggleMenu()"
+        >
+          Get Started
+        </a>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden relative">
-        <div class="absolute inset-0 z-0 opacity-40">
-            <!-- Dynamic fluid abstract background vectors -->
-            <svg class="absolute -top-40 -right-40 w-96 md:w-[600px] text-brand-cream/40" viewBox="0 0 200 200" fill="currentColor">
-                <path d="M43.3,-61.1C55.6,-52.8,64.8,-39.8,70.1,-25.1C75.5,-10.4,76.9,6.1,72.4,21C67.8,36,57.3,49.5,43.9,58.7C30.4,67.9,14,72.9,-2.4,76.2C-18.9,79.5,-35.3,81.1,-48.6,73.1C-61.8,65.1,-71.8,47.6,-76.3,29.3C-80.8,11.1,-79.8,-7.8,-72.6,-23.7C-65.4,-39.6,-51.9,-52.4,-37.2,-59.8C-22.5,-67.2,-6.6,-69.1,6.5,-70.5C19.7,-71.9,31.1,-69.4,43.3,-61.1Z" transform="translate(100 100)" />
-            </svg>
-            <svg class="absolute -bottom-40 -left-40 w-96 md:w-[600px] text-brand-cream/30" viewBox="0 0 200 200" fill="currentColor">
-                <path d="M41.5,-59.2C54,-51.7,64.3,-39.6,71.5,-25C78.8,-10.4,83,6.7,78.8,21.6C74.6,36.5,62,49.2,47.8,58.7C33.7,68.2,18,74.5,1.4,72.5C-15.1,70.6,-31.2,60.4,-44.6,49.4C-58,38.3,-68.7,26.4,-72.7,11.9C-76.7,-2.6,-74,-19.7,-65.7,-32.8C-57.5,-45.9,-43.7,-55,-29.9,-61.5C-16.1,-67.9,-2.2,-71.8,11.7,-70.5C25.7,-69.3,37.5,-66.6,41.5,-59.2Z" transform="translate(100 100)" />
-            </svg>
+    <section
+      class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden relative"
+    >
+      <div class="absolute inset-0 z-0 opacity-40">
+        <svg
+          class="absolute -top-40 -right-40 w-96 md:w-[600px] text-brand-cream/40"
+          viewBox="0 0 200 200"
+          fill="currentColor"
+        >
+          <path
+            d="M43.3,-61.1C55.6,-52.8,64.8,-39.8,70.1,-25.1C75.5,-10.4,76.9,6.1,72.4,21C67.8,36,57.3,49.5,43.9,58.7C30.4,67.9,14,72.9,-2.4,76.2C-18.9,79.5,-35.3,81.1,-48.6,73.1C-61.8,65.1,-71.8,47.6,-76.3,29.3C-80.8,11.1,-79.8,-7.8,-72.6,-23.7C-65.4,-39.6,-51.9,-52.4,-37.2,-59.8C-22.5,-67.2,-6.6,-69.1,6.5,-70.5C19.7,-71.9,31.1,-69.4,43.3,-61.1Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10"
+      >
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div
+            class="inline-flex items-center space-x-2 bg-brand-brown/5 border border-brand-brown/10 px-4 py-2 rounded-full"
+          >
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-brand-brown animate-pulse"
+            ></span>
+            <span
+              class="text-xs font-bold tracking-wider uppercase text-brand-brown"
+              >Visual Excellence & Premium Support</span
+            >
+          </div>
+
+          <!-- Headline Restored to "Designing for Impact" -->
+          <h1
+            class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-brand-brown"
+          >
+            Designing for Impact. <br class="hidden md:inline" />
+            <span class="text-brand-dark/90">Automating Efficiency.</span>
+          </h1>
+
+          <p
+            class="text-lg md:text-xl text-brand-brown/80 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed"
+          >
+            At <span class="font-bold">Smartassist Hub (T-SMAH)</span>, we build
+            strategic, highly compelling brand systems that help businesses
+            stand out, build trust, and communicate professionally.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
+          >
+            <a
+              href="#services"
+              class="w-full sm:w-auto px-8 py-4 bg-brand-brown text-brand-cream text-base font-bold rounded-xl shadow-lg hover:bg-brand-dark hover:shadow-2xl hover:-translate-y-1 transition-all text-center"
+            >
+              Explore Services & Packages
+            </a>
+            <!-- Button pointing directly to your new secure Google form link -->
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto px-8 py-4 border-2 border-brand-brown/30 text-brand-brown text-base font-bold rounded-xl hover:bg-brand-cream/30 hover:border-brand-brown transition-all text-center"
+            >
+              Launch Project Brief
+            </a>
+          </div>
         </div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Left Text Content -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center space-x-2 bg-brand-brown/5 border border-brand-brown/10 px-4 py-2 rounded-full">
-                    <span class="w-2.5 h-2.5 rounded-full bg-brand-brown animate-pulse"></span>
-                    <span class="text-xs font-bold tracking-wider uppercase text-brand-brown">Visual Excellence & Premium Support</span>
-                </div>
-                
-                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-brand-brown">
-                    Crafting Visual Assets. <br class="hidden md:inline">
-                    <span class="text-brand-dark/90">Automating Efficiency.</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl text-brand-brown/80 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    At <span class="font-bold">Smartassist Hub (T-SMAH)</span>, we construct premium graphic design that empowers and elevates your brand. In the near future, we are upgrading into a complete company to bring you seamless, world-class professional Virtual Assistant services.
+        <!-- Right Asset Display Card -->
+        <div class="lg:col-span-5 relative">
+          <div
+            class="relative mx-auto max-w-sm bg-brand-cream rounded-3xl p-6 shadow-2xl border-4 border-white transform hover:rotate-1 transition-all duration-500"
+          >
+            <div
+              class="bg-brand-brown/10 rounded-2xl p-6 aspect-square flex flex-col justify-between relative overflow-hidden"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-[9px] uppercase font-bold text-brand-brown/60 tracking-widest"
+                  >Brand Authority System</span
+                >
+                <span
+                  class="text-xs font-bold text-brand-brown bg-brand-cream px-2.5 py-1 rounded"
+                  >Est. 2026</span
+                >
+              </div>
+              <div class="my-auto flex justify-center">
+                <svg
+                  class="w-28 h-28 text-brand-brown"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="0.75"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h3 class="font-serif text-lg font-bold text-brand-brown">
+                  Smartassist Hub
+                </h3>
+                <p class="text-[11px] text-brand-brown/80 leading-relaxed">
+                  Engineered visual presentation packages tailored to scale
+                  across modern ecosystems.
                 </p>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-brand-brown text-brand-cream text-base font-bold rounded-xl shadow-lg hover:bg-brand-dark hover:shadow-2xl hover:-translate-y-1 transition-all text-center">
-                        Explore Our Designs
-                    </a>
-                    <a href="#future-vision" class="w-full sm:w-auto px-8 py-4 border-2 border-brand-brown/30 text-brand-brown text-base font-bold rounded-xl hover:bg-brand-cream/30 hover:border-brand-brown transition-all text-center">
-                        See Our Evolution
-                    </a>
-                </div>
-
-                <!-- Achievements/Badges -->
-                <div class="grid grid-cols-3 gap-6 pt-8 max-w-lg mx-auto lg:mx-0 border-t border-brand-cream">
-                    <div>
-                        <div class="font-serif text-3xl font-bold text-brand-brown">100%</div>
-                        <div class="text-xs font-semibold text-brand-brown/70 mt-1 uppercase tracking-wider">Design Accuracy</div>
-                    </div>
-                    <div>
-                        <div class="font-serif text-3xl font-bold text-brand-brown">24hr</div>
-                        <div class="text-xs font-semibold text-brand-brown/70 mt-1 uppercase tracking-wider">Fast Turnaround</div>
-                    </div>
-                    <div>
-                        <div class="font-serif text-3xl font-bold text-brand-brown">Ready</div>
-                        <div class="text-xs font-semibold text-brand-brown/70 mt-1 uppercase tracking-wider">For Future Scaling</div>
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <!-- Right Visual Interactive Showcase -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative mx-auto max-w-sm sm:max-w-md bg-brand-cream rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-white transform hover:rotate-1 transition-all duration-500">
-                    <div class="absolute -top-3 -right-3 bg-brand-brown text-brand-cream px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
-                        Featured Work
-                    </div>
-                    
-                    <!-- Dynamic Graphic Designer Frame Mockup -->
-                    <div class="bg-brand-brown/10 rounded-2xl p-4 aspect-square flex flex-col justify-between relative overflow-hidden group">
-                        <!-- Abstract Design Grid inside card -->
-                        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                        <div class="flex justify-between items-start relative z-10">
-                            <span class="text-xs uppercase font-bold text-brand-brown/60 tracking-widest">Brand Collateral</span>
-                            <span class="text-xs font-bold text-brand-brown bg-brand-cream px-2 py-1 rounded">2026 Edition</span>
-                        </div>
-                        
-                        <!-- Beautiful SVG illustration that perfectly highlights modern layout and branding -->
-                        <div class="my-auto py-4 flex justify-center">
-                            <svg class="w-32 h-32 text-brand-brown" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-
-                        <div class="space-y-2 relative z-10">
-                            <h3 class="font-serif text-xl font-bold text-brand-brown">Minimalist Identity System</h3>
-                            <p class="text-xs text-brand-brown/80">Tailored corporate guidelines designed to scale effortlessly across printed and digital mediums.</p>
-                        </div>
-                    </div>
-
-                    <!-- Client Testimonial snippet inside card -->
-                    <div class="mt-6 p-4 bg-white/80 rounded-2xl shadow-sm border border-brand-cream/40">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-brand-brown flex items-center justify-center text-xs text-brand-cream font-bold">
-                                JD
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-brand-brown">Juliana Davies</h4>
-                                <p class="text-[10px] text-brand-brown/60">CEO, Summit Ventures</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-brand-brown/90 italic mt-2">"T-SMAH delivers stunning visual clarity. Their designs elevated our branding overnight!"</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Dynamic Services Section -->
+    <!-- Upgraded Services Section (Clean Cards, Click to Expand Packages) -->
     <section id="services" class="py-24 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-sm font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/40 px-3 py-1.5 rounded-full">Our Focus Fields</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Our Current & Planned Offerings</h2>
-                <p class="text-base md:text-lg text-brand-brown/80">
-                    We currently specialize purely in elite-grade graphic design. Here is a snapshot of our design specializations, and the sneak-peek of our upcoming executive virtual assistance division.
-                </p>
-
-                <!-- Interactive Switcher -->
-                <div class="flex items-center justify-center gap-4 pt-6">
-                    <button id="btn-design-srv" onclick="switchServiceTab('design')" class="px-6 py-2.5 rounded-full bg-brand-brown text-brand-cream font-semibold text-sm shadow-md transition-all">
-                        Active: Graphic Design
-                    </button>
-                    <button id="btn-va-srv" onclick="switchServiceTab('va')" class="px-6 py-2.5 rounded-full bg-brand-creamLight text-brand-brown border border-brand-brown/20 font-semibold text-sm hover:border-brand-brown transition-all">
-                        Future: Virtual Assistant
-                    </button>
-                </div>
-            </div>
-
-            <!-- Graphic Design Services Deck -->
-            <div id="design-services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-300">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-3xl bg-brand-creamLight border border-brand-cream/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-brown flex items-center justify-center text-brand-cream">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Brand Identity & Logos</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            We curate unique visual architectures, complete with beautiful modern logos, sophisticated typography mappings, and defined style manuals that anchor your business in memory.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ Brand Strategy Guidelines</li>
-                        <li class="flex items-center gap-2">✓ Logo Systems (Primary, Secondary, Icons)</li>
-                        <li class="flex items-center gap-2">✓ Palette & Typography Mapping</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 rounded-3xl bg-brand-creamLight border border-brand-cream/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-brown flex items-center justify-center text-brand-cream">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0V12m-3 .5a1.5 1.5 0 003 0M10 12h2a1.5 1.5 0 011.5 1.5v4M13 14h2a1.5 1.5 0 011.5 1.5v2m-9-6a3 3 0 016 0M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Marketing Materials</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            Capture massive conversion heights with flyers, business cards, pitch decks, and digital banners built explicitly to maximize customer trust and increase active response rates.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ Professional Pitch Decks</li>
-                        <li class="flex items-center gap-2">✓ Dynamic Brochures & Catalogues</li>
-                        <li class="flex items-center gap-2">✓ Print Ready Stationery Packages</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="p-8 rounded-3xl bg-brand-creamLight border border-brand-cream/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-brown flex items-center justify-center text-brand-cream">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Social Media Layouts</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            Stop scroll actions instantly. We custom craft high-fidelity templates for Instagram, LinkedIn, and Facebook, designed to keep your feed consistent, modern, and highly interactive.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ Custom Post Grid Layouts</li>
-                        <li class="flex items-center gap-2">✓ Interactive Carousel Blueprints</li>
-                        <li class="flex items-center gap-2">✓ Banner Systems for LinkedIn/Twitter</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Virtual Assistant Services Deck (Initially Hidden) -->
-            <div id="va-services-grid" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-300">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-3xl bg-brand-cream/10 border-2 border-dashed border-brand-brown/30 shadow-sm relative overflow-hidden flex flex-col justify-between">
-                    <div class="absolute top-4 right-4 bg-brand-brown text-brand-cream text-[9px] font-bold px-2 py-1 rounded">
-                        COMING SOON
-                    </div>
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-cream flex items-center justify-center text-brand-brown">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Executive Schedule Management</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            Gain complete calendar mastery. Our future executive assistance experts will coordinate, structure, and streamline multi-tier booking pipelines so you focus solely on execution.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ Complete Calendar Coordination</li>
-                        <li class="flex items-center gap-2">✓ Travel Logistics Booking</li>
-                        <li class="flex items-center gap-2">✓ Strategic Priority Routing</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 rounded-3xl bg-brand-cream/10 border-2 border-dashed border-brand-brown/30 shadow-sm relative overflow-hidden flex flex-col justify-between">
-                    <div class="absolute top-4 right-4 bg-brand-brown text-brand-cream text-[9px] font-bold px-2 py-1 rounded">
-                        COMING SOON
-                    </div>
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-cream flex items-center justify-center text-brand-brown">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Inbox & Communication Flow</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            Clear email clutter for good. We will orchestrate responsive auto-filters, prompt VIP escalations, and execute professional correspondence to keep response latency at an absolute low.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ Inbox Decluttering & Labeling</li>
-                        <li class="flex items-center gap-2">✓ Outbound Draft Formulations</li>
-                        <li class="flex items-center gap-2">✓ Client Inbound Prioritization</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="p-8 rounded-3xl bg-brand-cream/10 border-2 border-dashed border-brand-brown/30 shadow-sm relative overflow-hidden flex flex-col justify-between">
-                    <div class="absolute top-4 right-4 bg-brand-brown text-brand-cream text-[9px] font-bold px-2 py-1 rounded">
-                        COMING SOON
-                    </div>
-                    <div class="space-y-6">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-cream flex items-center justify-center text-brand-brown">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown">Data Audits & Operations</h3>
-                        <p class="text-sm leading-relaxed text-brand-brown/80">
-                            From setting up beautiful CRM systems to consolidating complex product spreadsheets, we will construct simple pipelines to keep your critical business records perfectly curated.
-                        </p>
-                    </div>
-                    <ul class="mt-6 space-y-2.5 pt-6 border-t border-brand-cream/50 text-xs font-semibold text-brand-brown/90">
-                        <li class="flex items-center gap-2">✓ CRM Administration & Auditing</li>
-                        <li class="flex items-center gap-2">✓ Document Formatting & Cataloging</li>
-                        <li class="flex items-center gap-2">✓ Spreadsheet Automation Tasks</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span
+            class="text-sm font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/40 px-3 py-1.5 rounded-full"
+            >Core Specializations</span
+          >
+          <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">
+            Our Graphic Design Capabilities
+          </h2>
+          <p class="text-base text-brand-brown/80">
+            Click on any service track to instantly expand and view our
+            customized pricing packages and exact package inclusions.
+          </p>
         </div>
+
+        <!-- Service Summary Cards (The trigger grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          <!-- Service Summary 1 -->
+          <button
+            onclick="toggleServicePricing('brand')"
+            id="summary-brand"
+            class="service-trigger-card text-left p-6 rounded-2xl border-2 border-brand-brown/10 bg-brand-creamLight hover:border-brand-brown transition-all duration-300 relative group flex flex-col justify-between min-h-[180px]"
+          >
+            <div class="space-y-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-brand-brown text-brand-cream flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11V7a4 4 0 00-8 0v4c0 2.451.636 4.755 1.753 6.756M10 11a3.993 3.993 0 002.392 3.682M13.753 21A13.947 13.947 0 0015 11V7a4 4 0 00-8 0v4c0 .356.03.707.088 1.05M16 11a5 5 0 0110 0v4A5 5 0 0116 15v-4z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-brown">
+                Brand Identity Design
+              </h3>
+              <p class="text-[11px] text-brand-brown/75 leading-relaxed">
+                Strategic and visually compelling brand systems.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between pt-4 mt-2 border-t border-brand-brown/10 w-full text-xs font-bold text-brand-brown"
+            >
+              <span class="trigger-label-text">View Pricing</span>
+              <svg
+                class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform trigger-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </button>
+
+          <!-- Service Summary 2 -->
+          <button
+            onclick="toggleServicePricing('social')"
+            id="summary-social"
+            class="service-trigger-card text-left p-6 rounded-2xl border-2 border-brand-brown/10 bg-brand-creamLight hover:border-brand-brown transition-all duration-300 relative group flex flex-col justify-between min-h-[180px]"
+          >
+            <div class="space-y-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-brand-brown text-brand-cream flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-brown">
+                Social Media Designs
+              </h3>
+              <p class="text-[11px] text-brand-brown/75 leading-relaxed">
+                Creative, high-visibility visuals configured for social growth.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between pt-4 mt-2 border-t border-brand-brown/10 w-full text-xs font-bold text-brand-brown"
+            >
+              <span class="trigger-label-text">View Pricing</span>
+              <svg
+                class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform trigger-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </button>
+
+          <!-- Service Summary 3 -->
+          <button
+            onclick="toggleServicePricing('marketing')"
+            id="summary-marketing"
+            class="service-trigger-card text-left p-6 rounded-2xl border-2 border-brand-brown/10 bg-brand-creamLight hover:border-brand-brown transition-all duration-300 relative group flex flex-col justify-between min-h-[180px]"
+          >
+            <div class="space-y-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-brand-brown text-brand-cream flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-brown">
+                Marketing & Advertising
+              </h3>
+              <p class="text-[11px] text-brand-brown/75 leading-relaxed">
+                High-converting visuals crafted to promote products and events.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between pt-4 mt-2 border-t border-brand-brown/10 w-full text-xs font-bold text-brand-brown"
+            >
+              <span class="trigger-label-text">View Pricing</span>
+              <svg
+                class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform trigger-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </button>
+
+          <!-- Service Summary 4 -->
+          <button
+            onclick="toggleServicePricing('print')"
+            id="summary-print"
+            class="service-trigger-card text-left p-6 rounded-2xl border-2 border-brand-brown/10 bg-brand-creamLight hover:border-brand-brown transition-all duration-300 relative group flex flex-col justify-between min-h-[180px]"
+          >
+            <div class="space-y-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-brand-brown text-brand-cream flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-brown">
+                Print Designs
+              </h3>
+              <p class="text-[11px] text-brand-brown/75 leading-relaxed">
+                Professionally prepared print-ready tangible layout files.
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between pt-4 mt-2 border-t border-brand-brown/10 w-full text-xs font-bold text-brand-brown"
+            >
+              <span class="trigger-label-text">View Pricing</span>
+              <svg
+                class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform trigger-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        <!-- Dynamic Interactive Expanded Pricing Container -->
+        <div
+          id="pricing-expanded-panel"
+          class="hidden transition-all duration-500 transform scale-95 opacity-0 bg-brand-creamLight/40 rounded-3xl p-6 sm:p-10 border border-brand-cream"
+        >
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-brand-cream pb-6 mb-8 gap-4"
+          >
+            <div>
+              <span
+                class="text-[10px] tracking-widest font-bold uppercase text-brand-brown bg-brand-cream px-2.5 py-1 rounded"
+                >Interactive Package Dashboard</span
+              >
+              <h3
+                id="expanded-title"
+                class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark mt-2"
+              >
+                Brand Identity Design
+              </h3>
+              <p
+                id="expanded-desc"
+                class="text-xs sm:text-sm text-brand-brown/80 mt-1"
+              >
+                Strategic and visually compelling brand systems designed to help
+                businesses stand out, build trust, and communicate
+                professionally.
+              </p>
+            </div>
+            <!-- Inline Switcher -->
+            <div
+              class="flex items-center gap-2 self-start sm:self-center shrink-0"
+            >
+              <span class="text-xs font-bold text-brand-brown">Currency:</span>
+              <div
+                class="inline-flex bg-brand-brown/5 p-1 rounded-xl border border-brand-brown/10"
+              >
+                <button
+                  onclick="toggleCurrency('NGN')"
+                  class="curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream"
+                >
+                  ₦ NGN
+                </button>
+                <button
+                  onclick="toggleCurrency('USD')"
+                  class="curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown"
+                >
+                  USD ($)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Three Tier Package Grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6"
+            id="pricing-tiers-grid"
+          >
+            <!-- Cards are dynamically updated by Javascript to maintain absolute data integrity -->
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Filterable Graphic Design Portfolio -->
-    <section id="portfolio" class="py-24 bg-brand-creamLight px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full">Creative Showroom</span>
-                    <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Our Graphic Design Portfolio</h2>
-                    <p class="text-brand-brown/80 max-w-2xl">
-                        A carefully curated catalog of custom layouts and graphic assets designed explicitly to match current branding trends.
-                    </p>
-                </div>
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap gap-2.5">
-                    <button onclick="filterPortfolio('all')" class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-brand-brown text-brand-cream shadow transition-all" data-category="all">All Designs</button>
-                    <button onclick="filterPortfolio('branding')" class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all" data-category="branding">Branding</button>
-                    <button onclick="filterPortfolio('social')" class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all" data-category="social">Social Media</button>
-                    <button onclick="filterPortfolio('marketing')" class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all" data-category="marketing">Marketing Collateral</button>
-                </div>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: Branding -->
-                <div class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300" data-cat="branding">
-                    <div class="bg-brand-brown p-8 flex items-center justify-center text-brand-cream aspect-video relative group-hover:scale-105 transition-transform duration-500">
-                        <div class="w-full h-full flex flex-col justify-between">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[9px] uppercase tracking-wider bg-brand-cream/30 px-2 py-0.5 rounded">Brand Book</span>
-                                <span class="text-xs font-bold text-brand-cream">T-SMAH Project</span>
-                            </div>
-                            <div class="self-center">
-                                <svg class="w-16 h-16 text-brand-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <span class="text-xs font-light text-brand-cream/70">© Smartassist Hub Design</span>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown">Branding</span>
-                        <h3 class="font-serif text-xl font-bold text-brand-dark">Nordic Cafe Brand Identity</h3>
-                        <p class="text-xs text-brand-brown/80">Minimalist visual identity design utilizing earthly, eco-conscious hues and robust structural packaging guidelines.</p>
-                    </div>
-                </div>
-
-                <!-- Project 2: Social -->
-                <div class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300" data-cat="social">
-                    <div class="bg-brand-brown/90 p-8 flex items-center justify-center text-brand-cream aspect-video relative group-hover:scale-105 transition-transform duration-500">
-                        <div class="w-full h-full flex flex-col justify-between">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[9px] uppercase tracking-wider bg-brand-cream/30 px-2 py-0.5 rounded">Social System</span>
-                                <span class="text-xs font-bold text-brand-cream">T-SMAH Project</span>
-                            </div>
-                            <div class="self-center">
-                                <svg class="w-16 h-16 text-brand-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <span class="text-xs font-light text-brand-cream/70">© Smartassist Hub Design</span>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown">Social Media</span>
-                        <h3 class="font-serif text-xl font-bold text-brand-dark">FinTech Carousel Layout</h3>
-                        <p class="text-xs text-brand-brown/80">Interactive, high-retention post blueprints styled for direct product conversions and feature breakdowns on LinkedIn.</p>
-                    </div>
-                </div>
-
-                <!-- Project 3: Marketing -->
-                <div class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300" data-cat="marketing">
-                    <div class="bg-brand-cream p-8 flex items-center justify-center text-brand-brown aspect-video relative group-hover:scale-105 transition-transform duration-500">
-                        <div class="w-full h-full flex flex-col justify-between">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[9px] uppercase tracking-wider bg-brand-brown/20 px-2 py-0.5 rounded">Pitch Deck</span>
-                                <span class="text-xs font-bold text-brand-brown">T-SMAH Project</span>
-                            </div>
-                            <div class="self-center">
-                                <svg class="w-16 h-16 text-brand-brown" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
-                                </svg>
-                            </div>
-                            <span class="text-xs font-light text-brand-brown/70">© Smartassist Hub Design</span>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown">Marketing Collateral</span>
-                        <h3 class="font-serif text-xl font-bold text-brand-dark">AeroSpace Funding Deck</h3>
-                        <p class="text-xs text-brand-brown/80">An extremely tidy, highly visual corporate pitch deck designed to showcase metrics with intense clarity for venture funding.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Filterable Dynamic Graphic Design Portfolio with On-Demand Upload System -->
+    <section
+      id="portfolio"
+      class="py-24 bg-brand-creamLight px-6 border-t border-brand-cream/30"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full"
+              >Creative Showroom</span
+            >
+            <h2
+              class="font-serif text-3xl md:text-5xl font-bold text-brand-dark"
+            >
+              Our Brand Portfolio
+            </h2>
+            <p class="text-brand-brown/80 max-w-2xl">
+              A clean showcase of visual configurations compiled strategically.
+              Upload your own layouts inside your project directory at any time
+              to automatically update this slider.
+            </p>
+          </div>
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2.5">
+            <button
+              onclick="filterPortfolio('all')"
+              class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-brand-brown text-brand-cream shadow transition-all"
+              data-category="all"
+            >
+              All Designs
+            </button>
+            <button
+              onclick="filterPortfolio('branding')"
+              class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all"
+              data-category="branding"
+            >
+              Branding
+            </button>
+            <button
+              onclick="filterPortfolio('social')"
+              class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all"
+              data-category="social"
+            >
+              Social Media
+            </button>
+            <button
+              onclick="filterPortfolio('marketing')"
+              class="portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all"
+              data-category="marketing"
+            >
+              Marketing & Print
+            </button>
+          </div>
         </div>
+
+        <!-- Portfolio Grid with Intelligent Relative Image Loading & Fallbacks -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1: Branding -->
+          <div
+            class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300"
+            data-cat="branding"
+          >
+            <div
+              class="relative w-full aspect-video bg-brand-brown flex items-center justify-center text-brand-cream overflow-hidden"
+            >
+              <!-- Fallback Visual Element (Stays visible if image is missing) -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-6 bg-brand-brown text-brand-cream"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[9px] uppercase tracking-wider bg-brand-cream/30 px-2 py-0.5 rounded"
+                    >Identity System</span
+                  >
+                  <span class="text-xs font-bold text-brand-cream"
+                    >T-SMAH Design</span
+                  >
+                </div>
+                <div class="self-center">
+                  <svg
+                    class="w-14 h-14 text-brand-cream/80"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
+                  </svg>
+                </div>
+                <span class="text-[10px] font-light text-brand-cream/60"
+                  >© Smartassist Hub Design</span
+                >
+              </div>
+              <!-- Real Dynamic Image (Displays automatically when uploaded as assets/portfolio-brand.jpg) -->
+              <img
+                src="assets/portfolio-brand.jpg"
+                alt="Nordic Cafe Brand Identity"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.style.opacity = '0'"
+              />
+            </div>
+            <div class="p-6 space-y-3">
+              <span
+                class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown"
+                >Branding Series</span
+              >
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                Nordic Cafe Corporate Identity
+              </h3>
+              <p class="text-xs text-brand-brown/80">
+                Premium layout detailing minimal color mappings, typography
+                frameworks, and mockups.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2: Social Media -->
+          <div
+            class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300"
+            data-cat="social"
+          >
+            <div
+              class="relative w-full aspect-video bg-brand-brown/95 flex items-center justify-center text-brand-cream overflow-hidden"
+            >
+              <!-- Fallback Visual Element -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-6 bg-brand-brown/95 text-brand-cream"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[9px] uppercase tracking-wider bg-brand-cream/30 px-2 py-0.5 rounded"
+                    >Digital Media</span
+                  >
+                  <span class="text-xs font-bold text-brand-cream"
+                    >T-SMAH Design</span
+                  >
+                </div>
+                <div class="self-center">
+                  <svg
+                    class="w-14 h-14 text-brand-cream/80"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <span class="text-[10px] font-light text-brand-cream/60"
+                  >© Smartassist Hub Design</span
+                >
+              </div>
+              <!-- Real Dynamic Image (Displays automatically when uploaded as assets/portfolio-social.jpg) -->
+              <img
+                src="assets/portfolio-social.jpg"
+                alt="FinTech Carousel Layout"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.style.opacity = '0'"
+              />
+            </div>
+            <div class="p-6 space-y-3">
+              <span
+                class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown"
+                >Social Media Grid</span
+              >
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                FinTech High-Conversion Carousel
+              </h3>
+              <p class="text-xs text-brand-brown/80">
+                Engaging, high-retention slide deck layout optimized to convert
+                target audiences on digital feeds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 3: Marketing & Ads -->
+          <div
+            class="portfolio-item bg-white rounded-3xl overflow-hidden shadow-md group hover:shadow-2xl transition-all duration-300"
+            data-cat="marketing"
+          >
+            <div
+              class="relative w-full aspect-video bg-brand-cream flex items-center justify-center text-brand-brown overflow-hidden"
+            >
+              <!-- Fallback Visual Element -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between p-6 bg-brand-cream text-brand-brown"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[9px] uppercase tracking-wider bg-brand-brown/20 px-2 py-0.5 rounded"
+                    >Campaign Track</span
+                  >
+                  <span class="text-xs font-bold text-brand-brown"
+                    >T-SMAH Design</span
+                  >
+                </div>
+                <div class="self-center">
+                  <svg
+                    class="w-14 h-14 text-brand-brown/80"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"
+                    />
+                  </svg>
+                </div>
+                <span class="text-[10px] font-light text-brand-brown/50"
+                  >© Smartassist Hub Design</span
+                >
+              </div>
+              <!-- Real Dynamic Image (Displays automatically when uploaded as assets/portfolio-marketing.jpg) -->
+              <img
+                src="assets/portfolio-marketing.jpg"
+                alt="AeroSpace Funding Deck"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.style.opacity = '0'"
+              />
+            </div>
+            <div class="p-6 space-y-3">
+              <span
+                class="text-[10px] font-extrabold uppercase tracking-widest text-brand-brown"
+                >Marketing Campaign</span
+              >
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                AeroSpace Strategic Pitch Deck
+              </h3>
+              <p class="text-xs text-brand-brown/80">
+                Corporate pitch presentations and posters compiled with clean
+                grids and dynamic content flow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Interactive Pricing & Project Quote Calculator -->
+    <!-- Why Choose Us Section -->
+    <section
+      id="why-choose-us"
+      class="py-20 bg-brand-creamLight px-6 border-t border-brand-cream/40"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full"
+            >Core Principles</span
+          >
+          <h2 class="font-serif text-3xl font-bold text-brand-dark">
+            Why Choose T-SMAH?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+          <!-- Highlighted Principle Card: "We Design for Impact" -->
+          <div
+            class="p-6 bg-white rounded-2xl border-2 border-brand-brown shadow-md space-y-2 relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-5 -right-5 w-12 h-12 bg-brand-brown/5 rounded-full"
+            ></div>
+            <span class="text-2xl block">⚡</span>
+            <h4 class="font-bold text-sm text-brand-brown">
+              We Design for Impact
+            </h4>
+            <p class="text-[11px] text-brand-brown/85 leading-relaxed">
+              We do not just create drawings; we craft intentional brand assets
+              engineered directly to deliver visual results and elevate company
+              status.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-2xl border border-brand-cream/30 space-y-2"
+          >
+            <span class="text-xl block">🎯</span>
+            <h4 class="font-bold text-sm text-brand-brown">
+              Professional Presentation
+            </h4>
+            <p class="text-[11px] text-brand-brown/70 leading-relaxed">
+              Grid alignments, typography scales, and palette metrics checked
+              thoroughly.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-2xl border border-brand-cream/30 space-y-2"
+          >
+            <span class="text-xl block">👁️</span>
+            <h4 class="font-bold text-sm text-brand-brown">
+              Attention to Detail
+            </h4>
+            <p class="text-[11px] text-brand-brown/70 leading-relaxed">
+              Meticulous kerning, crisp line elements, and immaculate contrast
+              ratios are applied to all track components.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-2xl border border-brand-cream/30 space-y-2"
+          >
+            <span class="text-xl block">📅</span>
+            <h4 class="font-bold text-sm text-brand-brown">Timely Delivery</h4>
+            <p class="text-[11px] text-brand-brown/70 leading-relaxed">
+              We respect launch guidelines and manage asset timelines
+              rigorously.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-2xl border border-brand-cream/30 space-y-2"
+          >
+            <span class="text-xl block">🤝</span>
+            <h4 class="font-bold text-sm text-brand-brown">
+              Client-Focused Approach
+            </h4>
+            <p class="text-[11px] text-brand-brown/70 leading-relaxed">
+              Close creative collaboration across every distinct baseline phase.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-2xl border border-brand-cream/30 space-y-2"
+          >
+            <span class="text-xl block">✨</span>
+            <h4 class="font-bold text-sm text-brand-brown">
+              Modern & Clean Visuals
+            </h4>
+            <p class="text-[11px] text-brand-brown/70 leading-relaxed">
+              Zero clutter. Modern visual hierarchies configured for supreme
+              legibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Quote Estimator Section (Connected to selected tiers) -->
     <section id="quote-calculator" class="py-24 bg-white px-6">
-        <div class="max-w-4xl mx-auto bg-brand-creamLight rounded-3xl p-8 md:p-12 border border-brand-cream/50 shadow-xl relative overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-cream/30 rounded-full blur-2xl"></div>
-            
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-10 relative z-10">
-                <span class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full">Interactive Tools</span>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark">Estimate Your Design Project</h2>
-                <p class="text-xs md:text-sm text-brand-brown/80">
-                    Select your custom design prerequisites below to instantly generate an estimate for your graphic design deliverables.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative z-10">
-                <!-- Checkbox Selections -->
-                <div class="space-y-4">
-                    <h3 class="font-bold text-brand-brown uppercase text-xs tracking-wider mb-2">Select Deliverables:</h3>
-                    
-                    <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all">
-                        <input type="checkbox" value="500" class="design-item-calc w-4 h-4 rounded text-brand-brown focus:ring-brand-brown" checked onchange="calculateEstimate()">
-                        <div>
-                            <span class="block text-sm font-bold text-brand-dark">Complete Logo System ($500)</span>
-                            <span class="block text-[10px] text-brand-brown/70">Includes logo alternatives and high-res vector files</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all">
-                        <input type="checkbox" value="800" class="design-item-calc w-4 h-4 rounded text-brand-brown focus:ring-brand-brown" onchange="calculateEstimate()">
-                        <div>
-                            <span class="block text-sm font-bold text-brand-dark">Full Corporate Brand Guidelines ($800)</span>
-                            <span class="block text-[10px] text-brand-brown/70">Typography, color mappings, and visual usage rules</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all">
-                        <input type="checkbox" value="350" class="design-item-calc w-4 h-4 rounded text-brand-brown focus:ring-brand-brown" onchange="calculateEstimate()">
-                        <div>
-                            <span class="block text-sm font-bold text-brand-dark">Social Media Kit ($350)</span>
-                            <span class="block text-[10px] text-brand-brown/70">10 premium custom post template files (Canva/PS)</span>
-                        </div>
-                    </label>
-
-                    <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all">
-                        <input type="checkbox" value="600" class="design-item-calc w-4 h-4 rounded text-brand-brown focus:ring-brand-brown" onchange="calculateEstimate()">
-                        <div>
-                            <span class="block text-sm font-bold text-brand-dark">Pitch Deck & Presentation Layout ($600)</span>
-                            <span class="block text-[10px] text-brand-brown/70">Beautifully styled investor presentation slides</span>
-                        </div>
-                    </label>
-
-                    <!-- Speed Option -->
-                    <div class="pt-4">
-                        <h3 class="font-bold text-brand-brown uppercase text-xs tracking-wider mb-2">Turnaround Speed:</h3>
-                        <select id="turnaround-speed" onchange="calculateEstimate()" class="w-full bg-white border border-brand-cream/40 p-3 rounded-xl text-sm font-semibold text-brand-brown focus:ring-2 focus:ring-brand-brown outline-none">
-                            <option value="1">Standard Speed (5-7 business days) (1x)</option>
-                            <option value="1.3">Express Speed (2-3 business days) (+30%)</option>
-                            <option value="1.5">Hyper-Rush (24-hour turnaround) (+50%)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Live Summary Display Card -->
-                <div class="bg-brand-brown text-brand-cream rounded-3xl p-6 md:p-8 space-y-6 flex flex-col justify-between h-full shadow-lg">
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-bold uppercase tracking-widest text-brand-cream/70">Investment Breakdown</h4>
-                        <div class="h-[1px] bg-brand-cream/20"></div>
-                        
-                        <div class="flex justify-between items-center py-1">
-                            <span class="text-sm font-medium text-brand-cream/90">Base Design Elements</span>
-                            <span id="calc-base-total" class="font-bold text-base">$500.00</span>
-                        </div>
-                        <div class="flex justify-between items-center py-1">
-                            <span class="text-sm font-medium text-brand-cream/90">Timeline Factor</span>
-                            <span id="calc-speed-factor" class="font-bold text-base">1.0x</span>
-                        </div>
-                        
-                        <div class="h-[1px] bg-brand-cream/20"></div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div>
-                            <span class="block text-xs uppercase tracking-widest text-brand-cream/60">Estimated Total Investment</span>
-                            <span id="calc-grand-total" class="block font-serif text-4xl md:text-5xl font-bold text-white mt-1">$500.00</span>
-                        </div>
-
-                        <a href="#contact" class="block w-full text-center py-4 bg-brand-cream text-brand-brown rounded-xl text-sm font-bold shadow hover:bg-white hover:-translate-y-0.5 transition-all">
-                            Proceed to Briefing Section
-                        </a>
-                        <p class="text-[10px] text-brand-cream/60 text-center italic">Calculated estimates are subject to custom revisions upon discovery call.</p>
-                    </div>
-                </div>
-            </div>
+      <div
+        class="max-w-4xl mx-auto bg-brand-creamLight rounded-3xl p-8 md:p-12 border border-brand-cream/50 shadow-xl"
+      >
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-10">
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full"
+            >Interactive Tools</span
+          >
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark">
+            Estimate Your Design Project
+          </h2>
+          <p class="text-xs md:text-sm text-brand-brown/80">
+            Select your custom service track configuration to estimate your
+            project and choose your primary currency.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div class="space-y-4">
+            <h3
+              class="font-bold text-brand-brown uppercase text-xs tracking-wider mb-2"
+            >
+              Select Services:
+            </h3>
+
+            <label
+              class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all"
+            >
+              <input
+                type="checkbox"
+                id="calc-brand"
+                value="130000"
+                class="calc-checkbox w-4 h-4 text-brand-brown focus:ring-brand-brown"
+                checked
+                onchange="calculateEstimate()"
+              />
+              <div>
+                <span class="block text-sm font-bold text-brand-dark"
+                  >Brand Identity Design (Standard)</span
+                >
+                <span
+                  class="block text-[10px] text-brand-brown/70 font-mono"
+                  id="label-price-brand"
+                  >₦130,000 / $90</span
+                >
+              </div>
+            </label>
+
+            <label
+              class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all"
+            >
+              <input
+                type="checkbox"
+                id="calc-social"
+                value="80000"
+                class="calc-checkbox w-4 h-4 text-brand-brown focus:ring-brand-brown"
+                onchange="calculateEstimate()"
+              />
+              <div>
+                <span class="block text-sm font-bold text-brand-dark"
+                  >Social Media Design (Standard)</span
+                >
+                <span
+                  class="block text-[10px] text-brand-brown/70 font-mono"
+                  id="label-price-social"
+                  >₦80,000 / $55</span
+                >
+              </div>
+            </label>
+
+            <label
+              class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all"
+            >
+              <input
+                type="checkbox"
+                id="calc-marketing"
+                value="120000"
+                class="calc-checkbox w-4 h-4 text-brand-brown focus:ring-brand-brown"
+                onchange="calculateEstimate()"
+              />
+              <div>
+                <span class="block text-sm font-bold text-brand-dark"
+                  >Marketing & Ads (Standard)</span
+                >
+                <span
+                  class="block text-[10px] text-brand-brown/70 font-mono"
+                  id="label-price-marketing"
+                  >₦120,000 / $80</span
+                >
+              </div>
+            </label>
+
+            <label
+              class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-brand-cream/30 cursor-pointer select-none hover:border-brand-brown transition-all"
+            >
+              <input
+                type="checkbox"
+                id="calc-print"
+                value="100000"
+                class="calc-checkbox w-4 h-4 text-brand-brown focus:ring-brand-brown"
+                onchange="calculateEstimate()"
+              />
+              <div>
+                <span class="block text-sm font-bold text-brand-dark"
+                  >Print Media Layouts (Standard)</span
+                >
+                <span
+                  class="block text-[10px] text-brand-brown/70 font-mono"
+                  id="label-price-print"
+                  >₦100,000 / $70</span
+                >
+              </div>
+            </label>
+
+            <div class="pt-4">
+              <h3
+                class="font-bold text-brand-brown uppercase text-xs tracking-wider mb-2"
+              >
+                Delivery Timeline:
+              </h3>
+              <select
+                id="turnaround-speed"
+                onchange="calculateEstimate()"
+                class="w-full bg-white border border-brand-cream/40 p-3 rounded-xl text-sm font-semibold text-brand-brown focus:ring-2 focus:ring-brand-brown outline-none"
+              >
+                <option value="1">
+                  Standard Speed (5-7 business days) (1x)
+                </option>
+                <option value="1.3">
+                  Express Execution (2-3 business days) (+30%)
+                </option>
+                <option value="1.5">
+                  Hyper-Rush Strategy (24-hour turnaround) (+50%)
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Live Summary Card -->
+          <div
+            class="bg-brand-brown text-brand-cream rounded-3xl p-6 md:p-8 space-y-6 flex flex-col justify-between h-full shadow-lg"
+          >
+            <div class="space-y-4">
+              <h4
+                class="text-xs font-bold uppercase tracking-widest text-brand-cream/70"
+              >
+                Estimated Proposal Scope
+              </h4>
+              <div class="h-[1px] bg-brand-cream/20"></div>
+              <div class="flex justify-between items-center py-1">
+                <span class="text-xs font-medium text-brand-cream/95"
+                  >Selected Track Elements</span
+                >
+                <span id="calc-base-total" class="font-bold text-sm font-mono"
+                  >₦130,000</span
+                >
+              </div>
+              <div class="flex justify-between items-center py-1">
+                <span class="text-xs font-medium text-brand-cream/95"
+                  >Timeline Factor</span
+                >
+                <span id="calc-speed-factor" class="font-bold text-sm font-mono"
+                  >1.0x</span
+                >
+              </div>
+              <div class="h-[1px] bg-brand-cream/20"></div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <span
+                  class="block text-[10px] uppercase tracking-widest text-brand-cream/60"
+                  >Estimated Total Investment</span
+                >
+                <span
+                  id="calc-grand-total"
+                  class="block font-serif text-3xl font-bold text-white mt-1 font-mono"
+                  >₦130,000</span
+                >
+              </div>
+              <!-- Button pointing directly to your new secure Google form link -->
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full text-center py-4 bg-brand-cream text-brand-brown rounded-xl text-sm font-bold shadow hover:bg-white hover:-translate-y-0.5 transition-all"
+              >
+                Proceed to Intake Form
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Future Company Upgrade & Vision Story -->
-    <section id="future-vision" class="py-24 bg-brand-creamLight px-6 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Left Side SVG / Graphic representing "The Future Company Evolution" -->
-            <div class="lg:col-span-5 order-2 lg:order-1">
-                <div class="relative max-w-sm sm:max-w-md mx-auto">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-brown to-brand-cream rounded-3xl blur opacity-30"></div>
-                    <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-brand-cream/40">
-                        <h3 class="font-serif text-2xl font-bold text-brand-brown mb-6 flex items-center gap-2">
-                            <span>Evolution Pipeline</span>
-                            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-sans uppercase">Underway</span>
-                        </h3>
-                        
-                        <!-- Evolutionary timeline steps -->
-                        <div class="space-y-8 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-brand-cream">
-                            <!-- Step 1 -->
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-brand-brown flex items-center justify-center text-brand-cream text-xs font-bold">
-                                    1
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-brand-dark">Brand Foundations (Present)</h4>
-                                    <p class="text-xs text-brand-brown/80 mt-1">Providing premium, meticulously structured Graphic Design services solely. Establishing high visual standards.</p>
-                                </div>
-                            </div>
+    <section
+      id="future-vision"
+      class="py-24 bg-brand-creamLight px-6 overflow-hidden relative"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10"
+      >
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative max-w-sm mx-auto">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-brand-brown to-brand-cream rounded-3xl blur opacity-30"
+            ></div>
+            <div
+              class="relative bg-white p-8 rounded-3xl shadow-xl border border-brand-cream/40"
+            >
+              <h3
+                class="font-serif text-2xl font-bold text-brand-brown mb-6 flex items-center gap-2"
+              >
+                <span>Evolution Pipeline</span>
+                <span
+                  class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-sans uppercase"
+                  >Underway</span
+                >
+              </h3>
 
-                            <!-- Step 2 -->
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-brown text-xs font-bold border border-brand-brown/20">
-                                    2
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-brand-dark">Company Status & Staff Expansion</h4>
-                                    <p class="text-xs text-brand-brown/80 mt-1">Upgrading from a private sole-proprietor business structure to a registered joint-stock company framework.</p>
-                                </div>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-brown text-xs font-bold border border-brand-brown/20">
-                                    3
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-brand-dark">Virtual Assistant Integration</h4>
-                                    <p class="text-xs text-brand-brown/80 mt-1">Introducing premium, vetted administrative specialists to manage operations, schedules, and workflows for worldwide founders.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Content -->
-            <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
-                <span class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full">T-SMAH Vision</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Upgrading Graphic Mastery Into Total Operations Management</h2>
-                <p class="text-sm md:text-base text-brand-brown/80 leading-relaxed font-light">
-                    Why constrain performance to just graphics? At <span class="font-bold">Smartassist Hub</span>, we have identified a critical pain point for modern creators and startup builders: <span class="italic">The struggle between visual consistency and everyday operational output</span>.
-                </p>
-                <p class="text-sm md:text-base text-brand-brown/80 leading-relaxed font-light">
-                    Our roadmap details our immediate upgrade into a multi-tier professional agency model. Under the trademark <span class="font-bold">T-SMAH</span>, we plan to merge world-class graphic representation with executive Virtual Assistant structures. You will gain access to graphic artists and operational managers housed under a single, elite ecosystem.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    <div class="p-4 bg-white rounded-2xl border border-brand-cream/30">
-                        <span class="block text-brand-brown font-bold text-base mb-1">Visual Symmetry</span>
-                        <p class="text-xs text-brand-brown/80">Every design we construct is built with modular principles to scale seamlessly when our operational services activate.</p>
-                    </div>
-                    <div class="p-4 bg-white rounded-2xl border border-brand-cream/30">
-                        <span class="block text-brand-brown font-bold text-base mb-1">Uncompromising Execution</span>
-                        <p class="text-xs text-brand-brown/80">Our future Virtual Assistants are undergoing rigorous corporate training to oversee your schedules with absolute perfection.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet SMAH-E: Interactive AI Assistant Prototype -->
-    <section id="assistant-playground" class="py-24 bg-white px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-                <span class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full">Interactive Concept Sandbox</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">Meet SMAH-E, Our Assistant Prototype</h2>
-                <p class="text-xs md:text-sm text-brand-brown/80">
-                    Interact with our live operational assistant prototype! Ask SMAH-E questions regarding design techniques, calendar organization, or our upcoming T-SMAH service rollout.
-                </p>
-            </div>
-
-            <!-- Chat Container -->
-            <div class="bg-brand-creamLight border border-brand-cream/50 rounded-3xl overflow-hidden shadow-xl max-w-3xl mx-auto flex flex-col h-[550px]">
-                <!-- Chat Header -->
-                <div class="bg-brand-brown text-brand-cream p-4 flex items-center justify-between border-b border-brand-cream/20">
-                    <div class="flex items-center gap-3">
-                        <div class="relative">
-                            <div class="w-10 h-10 rounded-full bg-brand-cream text-brand-brown flex items-center justify-center font-bold font-serif text-base">
-                                T
-                            </div>
-                            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-brand-brown"></span>
-                        </div>
-                        <div>
-                            <h3 class="text-sm font-bold text-white leading-tight">SMAH-E Assistant Prototype</h3>
-                            <span class="text-[10px] text-brand-cream/75 flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-cream animate-pulse"></span> Intelligent Operations Agent
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Sample Starters dropdown -->
-                    <div class="text-xs">
-                        <span class="text-brand-cream/70 hidden md:inline mr-2">Quick Prompt:</span>
-                        <select id="chat-prompts-selector" onchange="triggerPredefinedPrompt()" class="bg-brand-creamLight text-brand-brown p-1.5 rounded-md font-bold focus:outline-none">
-                            <option value="">Choose topic...</option>
-                            <option value="Tell me about T-SMAH brand colors and identity.">Brand Identity</option>
-                            <option value="How will Virtual Assistants and Graphic Designers work together at T-SMAH?">Future Vision</option>
-                            <option value="Can you share three rapid design tips for visual branding on social media?">Design Advice</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Chat Messages Body -->
-                <div id="chat-messages-container" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm scroll-smooth">
-                    <!-- Default Bot Message -->
-                    <div class="flex items-start gap-3 max-w-[85%]">
-                        <div class="w-8 h-8 rounded-full bg-brand-brown text-brand-cream flex items-center justify-center font-serif text-xs font-bold shrink-0">
-                            S
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl rounded-tl-none border border-brand-cream/20 text-brand-dark shadow-sm">
-                            <p class="leading-relaxed">
-                                Hello and welcome! I am <span class="font-bold text-brand-brown">SMAH-E</span>, the virtual assistant prototype representing <span class="font-bold">Smartassist Hub (T-SMAH)</span>. 
-                            </p>
-                            <p class="leading-relaxed mt-2">
-                                I am designed to assist you with inquiries about our professional graphic design offerings, branding guidelines, and preview our upcoming operations assistance frameworks. What brand challenges can I assist with today?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chat Message Input Area -->
-                <div class="bg-white p-4 border-t border-brand-cream/30 flex items-center gap-3">
-                    <input type="text" id="chat-input-field" placeholder="Type your design or assistance inquiry..." class="flex-1 bg-brand-creamLight border border-brand-cream/40 px-4 py-3 rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-brown text-brand-dark" onkeydown="handleChatKeyPress(event)">
-                    <button onclick="sendChatMessage()" class="bg-brand-brown hover:bg-brand-dark text-brand-cream p-3 rounded-xl shadow-md transition-all flex items-center justify-center shrink-0">
-                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Onboarding Live Google Form Embedded Section -->
-    <section id="contact" class="py-24 bg-brand-creamLight px-6">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-cream/40">
-            <!-- Left Info Panel -->
-            <div class="lg:col-span-5 bg-brand-brown text-brand-cream p-8 md:p-12 flex flex-col justify-between">
-                <div class="space-y-6">
-                    <span class="text-xs font-bold tracking-widest uppercase text-brand-cream/60 bg-brand-cream/20 px-3 py-1.5 rounded-full inline-block">Direct Briefing</span>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Let's Craft Brand Authority</h2>
-                    <p class="text-xs md:text-sm text-brand-cream/80 leading-relaxed font-light">
-                        Connect directly with the T-SMAH project intake pipeline. Complete the live Google Form portal on the right, and a graphic strategy manager will reach out inside 24 business hours.
+              <div
+                class="space-y-8 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-brand-cream"
+              >
+                <div class="flex gap-4 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-brand-brown flex items-center justify-center text-brand-cream text-xs font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-brand-dark">
+                      Brand Foundations (Present)
+                    </h4>
+                    <p class="text-[11px] text-brand-brown/80 mt-1">
+                      Providing premium, meticulously structured Graphic Design
+                      services solely. Establishing high visual standards.
                     </p>
+                  </div>
                 </div>
-
-                <!-- Contact items -->
-                <div class="space-y-6 pt-10 border-t border-brand-cream/20">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-cream/10 flex items-center justify-center text-brand-cream">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] text-brand-cream/60 uppercase tracking-widest font-semibold">Direct Communication</span>
-                            <span class="block text-sm font-bold text-white">hello@t-smah.com</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-cream/10 flex items-center justify-center text-brand-cream">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] text-brand-cream/60 uppercase tracking-widest font-semibold">HQ Location</span>
-                            <span class="block text-sm font-bold text-white">Smartassist Hub | Lagos, Nigeria</span>
-                        </div>
-                    </div>
+                <div class="flex gap-4 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-brown text-xs font-bold border border-brand-brown/20"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-brand-dark">
+                      Company Framework Status
+                    </h4>
+                    <p class="text-[11px] text-brand-brown/80 mt-1">
+                      Upgrading from a private sole business structure to a
+                      registered professional company model.
+                    </p>
+                  </div>
                 </div>
-
-                <p class="text-[10px] text-brand-cream/50 mt-8 italic">© 2026 T-SMAH. All Design Property Rights Reserved.</p>
+                <div class="flex gap-4 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-brown text-xs font-bold border border-brand-brown/20"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-brand-dark">
+                      Virtual Assistant Integration
+                    </h4>
+                    <p class="text-[11px] text-brand-brown/80 mt-1">
+                      Introducing premium, highly specialized executive
+                      assistant structures to clear operational overhead
+                      globally.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Right Live Embedded Google Form Frame Container -->
-            <div class="lg:col-span-7 bg-brand-creamLight/40 p-4 sm:p-6 flex flex-col justify-center items-center relative min-h-[550px]">
-                <!-- Premium Loading Feedback layer behind form -->
-                <div class="absolute text-center text-xs font-semibold text-brand-brown/40 z-0">
-                    <svg class="w-8 h-8 animate-spin mx-auto text-brand-brown/30 mb-2" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Synchronizing T-SMAH Form Pipeline...
-                </div>
-                
-                <!-- Seamless Live Embedded Interactive Responsive Iframe -->
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQ9C67ZisI4H-Oa-zC_w83v_uL8TstX
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/60 px-3 py-1.5 rounded-full"
+            >T-SMAH Vision</span
+          >
+          <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark">
+            Merging Visual Mastery With Corporate Scale
+          </h2>
+          <p
+            class="text-sm md:text-base text-brand-brown/80 leading-relaxed font-light"
+          >
+            At <span class="font-bold">Smartassist Hub</span>, we bridge the gap
+            between creative visual execution and daily company output. Our
+            immediate corporate expansion timeline targets the deployment of
+            premier Virtual Assistant infrastructures. You will gain
+            comprehensive operational control alongside industry-grade graphic
+            assets, housed inside a single coordinated system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fixed Onboarding Live Google Form Action Section -->
+    <section id="contact" class="py-24 bg-brand-creamLight px-6">
+      <div
+        class="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-cream/40 p-8 md:p-12 text-center space-y-6"
+      >
+        <span
+          class="text-xs font-bold tracking-widest uppercase text-brand-brown bg-brand-cream/40 px-3 py-1.5 rounded-full"
+          >Secure Project Placement</span
+        >
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark">
+          Ready to Launch Your Briefing?
+        </h2>
+        <p class="text-sm text-brand-brown/80 max-w-xl mx-auto leading-relaxed">
+          Click the tracking portal button below to access our official
+          interactive intake form securely. Once your project parameters are
+          compiled, our creative department will reach out inside 24 business
+          hours.
+        </p>
+
+        <div class="pt-4">
+          <!-- Swapped out to the correct full viewform Google Form link as requested -->
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-brand-brown text-brand-cream text-base font-bold rounded-xl shadow-lg hover:bg-brand-dark hover:scale-[1.02] active:scale-[0.98] transition-all"
+          >
+            <span>Launch Project Briefing Portal</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <p class="text-[10px] text-brand-brown/50 italic">
+          Form pipelines synchronized perfectly via Google Drive architecture.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-brown text-brand-cream py-12 px-6">
+      <div
+        class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brand-cream/60 font-light"
+      >
+        <p>
+          © 2026 Smartassist Hub (T-SMAH). All Design Property Rights Reserved.
+        </p>
+        <p>Designed with absolute visual symmetry</p>
+      </div>
+    </footer>
+
+    <!-- Interactive JS Core -->
+    <script>
+      // Active state values
+      let currentCurrency = "NGN"; // NGN or USD
+      let activeServiceTrack = null; // brand, social, marketing, print
+
+      // Data Storage for Service Package Tiers
+      const serviceDatabase = {
+        brand: {
+          title: "Brand Identity Design",
+          desc: "Strategic and visually compelling brand systems designed to help businesses stand out, build trust, and communicate professionally.",
+          packages: [
+            {
+              name: "Starter Brand Package",
+              priceNgn: "₦50,000",
+              priceUsd: "$35",
+              tierLabel: "For Startups & Small Businesses",
+              items: [
+                "Primary Logo Design",
+                "Secondary Logo Variation",
+                "Brand Colour Palette",
+                "Typography Selection",
+                "2 Brand Mockups",
+                "PNG, JPG, PDF & SVG Files",
+                "3 Revision Rounds",
+              ],
+            },
+            {
+              name: "Standard Brand Identity",
+              priceNgn: "₦130,000",
+              priceUsd: "$90",
+              tierLabel: "Cohesive Corporate Visual Identity",
+              popular: true,
+              items: [
+                "Full Logo Suite",
+                "Brand Colour System",
+                "Typography System",
+                "4 Packaging Mockups",
+                "Business Card Design",
+                "Letterhead Design",
+                "6 Social Media Assets",
+                "Basic Brand Guidelines PDF",
+                "All Export File Formats",
+              ],
+            },
+            {
+              name: "Premium Brand System",
+              priceNgn: "₦250,000+",
+              priceUsd: "$170+",
+              tierLabel: "Established & Growth-Focused Brands",
+              items: [
+                "Brand Strategy & Research",
+                "Full Visual Identity System",
+                "8 Packaging Mockups",
+                "Storefront/Signage Mockups",
+                "Complete Stationery Package",
+                "12 Social Media Assets",
+                "Comprehensive Guidelines PDF",
+                "Editable Source Files",
+              ],
+            },
+          ],
+        },
+        social: {
+          title: "Social Media Designs",
+          desc: "Creative and engaging visuals tailored for audience engagement, marketing, and online visibility across platforms.",
+          packages: [
+            {
+              name: "Basic Social Package",
+              priceNgn: "₦35,000",
+              priceUsd: "$25",
+              tierLabel: "Essential Audience Outreach",
+              items: [
+                "5 Custom Social Designs",
+                "2 Story Designs",
+                "2 Revisions",
+                "Delivery in JPG/PNG Format",
+              ],
+            },
+            {
+              name: "Standard Social Package",
+              priceNgn: "₦80,000",
+              priceUsd: "$55",
+              tierLabel: "Consistent Visual Layouts",
+              popular: true,
+              items: [
+                "12 Custom Social Designs",
+                "6 Story Designs",
+                "3 Carousel Designs",
+                "Consistent Brand Styling",
+                "3 Revision Rounds",
+              ],
+            },
+            {
+              name: "Premium Social Package",
+              priceNgn: "₦180,000+",
+              priceUsd: "$120+",
+              tierLabel: "Complete Campaign System",
+              items: [
+                "20 Custom Social Designs",
+                "10 Story Designs",
+                "6 Carousel Designs",
+                "Content Templates",
+                "Campaign Graphics",
+                "Priority Delivery",
+                "4 Revision Rounds",
+              ],
+            },
+          ],
+        },
+        marketing: {
+          title: "Marketing & Advertising Designs",
+          desc: "High-converting promotional visuals created to support campaigns, product awareness, and business growth.",
+          packages: [
+            {
+              name: "Basic Marketing Package",
+              priceNgn: "₦50,000",
+              priceUsd: "$35",
+              tierLabel: "Small Scale Promotion Assets",
+              items: [
+                "3 Promotional Flyers",
+                "2 Poster Designs",
+                "1 Web Banner Design",
+                "2 Revision Rounds",
+              ],
+            },
+            {
+              name: "Standard Marketing Package",
+              priceNgn: "₦120,000",
+              priceUsd: "$80",
+              tierLabel: "Complete Multi-Channel Launch",
+              popular: true,
+              items: [
+                "6 Promotional Flyers",
+                "4 Poster Designs",
+                "3 Web Banner Designs",
+                "2 Roll-Up Banner Designs",
+                "Product Advertisement Graphics",
+                "3 Revision Rounds",
+              ],
+            },
+            {
+              name: "Premium Campaign Package",
+              priceNgn: "₦250,000+",
+              priceUsd: "$170+",
+              tierLabel: "Comprehensive Omnichannel Campaign",
+              items: [
+                "12 Promotional Designs",
+                "6 Poster Designs",
+                "4 Roll-Up Banner Designs",
+                "Billboard Design",
+                "Product Campaign Graphics",
+                "Event/Publicity Materials",
+                "Campaign Mockups",
+                "Priority Delivery",
+              ],
+            },
+          ],
+        },
+        print: {
+          title: "Print Designs",
+          desc: "Professionally prepared print-ready materials for businesses, events, and organizations.",
+          packages: [
+            {
+              name: "Basic Print Package",
+              priceNgn: "₦40,000",
+              priceUsd: "$30",
+              tierLabel: "Fundamental Office Assets",
+              items: [
+                "Business Card Design",
+                "Flyer Design",
+                "Poster Design",
+                "Print-Ready Files",
+              ],
+            },
+            {
+              name: "Standard Print Package",
+              priceNgn: "₦100,000",
+              priceUsd: "$70",
+              tierLabel: "Complete Corporate Print Elements",
+              popular: true,
+              items: [
+                "2 Flyer Designs",
+                "2 Poster Designs",
+                "Bi-Fold Brochure Design",
+                "Menu or Invitation Design",
+                "Print Mockups",
+              ],
+            },
+            {
+              name: "Premium Print Package",
+              priceNgn: "₦220,000+",
+              priceUsd: "$150+",
+              tierLabel: "High-Volume Production Ready Designs",
+              items: [
+                "Multi-Page Brochure Design",
+                "Complete Stationery Set",
+                "Packaging Design",
+                "Event Print Materials",
+                "Premium Print Mockups",
+                "Print-Ready & Editable Files",
+              ],
+            },
+          ],
+        },
+      };
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden"),
+      );
+      function toggleMenu() {
+        mobileMenu.classList.add("hidden");
+      }
+
+      // Currency Controller
+      function toggleCurrency(curr) {
+        currentCurrency = curr;
+
+        // Nav buttons update
+        const navNgn = document.getElementById("btn-curr-ngn-nav");
+        const navUsd = document.getElementById("btn-curr-usd-nav");
+        const mobNgn = document.getElementById("btn-curr-ngn-mob");
+        const mobUsd = document.getElementById("btn-curr-usd-mob");
+
+        if (curr === "NGN") {
+          navNgn.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream";
+          navUsd.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+          mobNgn.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream";
+          mobUsd.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+        } else {
+          navNgn.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+          navUsd.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream";
+          mobNgn.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+          mobUsd.className =
+            "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream";
+        }
+
+        // Sync Inline currency indicators inside the expanded dashboard
+        const inlineToggles = document.querySelectorAll(".curr-toggle-btn");
+        inlineToggles.forEach((btn) => {
+          if (btn.innerText.includes("NGN") || btn.innerText.includes("₦")) {
+            btn.className =
+              curr === "NGN"
+                ? "curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream"
+                : "curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+          } else {
+            btn.className =
+              curr === "USD"
+                ? "curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-brown text-brand-cream"
+                : "curr-toggle-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-brown";
+          }
+        });
+
+        // Re-render expanded tiers under newly toggled currency
+        if (activeServiceTrack) {
+          renderPricingPackages(activeServiceTrack);
+        }
+
+        // Recalculate estimator tool values
+        calculateEstimate();
+      }
+
+      // Expand/Collapse pricing section based on clicked service Summary Card
+      function toggleServicePricing(serviceKey) {
+        const panel = document.getElementById("pricing-expanded-panel");
+
+        // Check if user clicked the currently expanded card (toggle action)
+        if (activeServiceTrack === serviceKey) {
+          // Smooth collapse
+          panel.classList.add("scale-95", "opacity-0");
+          setTimeout(() => {
+            panel.classList.add("hidden");
+            activeServiceTrack = null;
+            resetTriggers();
+          }, 300);
+          return;
+        }
+
+        // Otherwise, load new database track into UI
+        activeServiceTrack = serviceKey;
+        resetTriggers();
+
+        // Highlight the active trigger card beautifully
+        const triggerCard = document.getElementById(`summary-${serviceKey}`);
+        triggerCard.classList.remove(
+          "border-brand-brown/10",
+          "bg-brand-creamLight",
+        );
+        triggerCard.classList.add(
+          "border-brand-brown",
+          "bg-white",
+          "ring-4",
+          "ring-brand-brown/5",
+        );
+        triggerCard.querySelector(".trigger-label-text").innerText =
+          "Active Selection";
+        triggerCard.querySelector(".trigger-arrow").classList.add("rotate-180");
+
+        // Render packages content
+        renderPricingPackages(serviceKey);
+
+        // Transition panel entry
+        panel.classList.remove("hidden");
+        setTimeout(() => {
+          panel.classList.remove("scale-95", "opacity-0");
+          panel.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50);
+      }
+
+      function resetTriggers() {
+        const triggers = document.querySelectorAll(".service-trigger-card");
+        triggers.forEach((card) => {
+          card.classList.add("border-brand-brown/10", "bg-brand-creamLight");
+          card.classList.remove(
+            "border-brand-brown",
+            "bg-white",
+            "ring-4",
+            "ring-brand-brown/5",
+          );
+          card.querySelector(".trigger-label-text").innerText = "View Pricing";
+          card.querySelector(".trigger-arrow").classList.remove("rotate-180");
+        });
+      }
+
+      // Generate specific HTML cards for Starter, Standard, and Premium packages dynamically
+      function renderPricingPackages(key) {
+        const data = serviceDatabase[key];
+        document.getElementById("expanded-title").innerText = data.title;
+        document.getElementById("expanded-desc").innerText = data.desc;
+
+        const grid = document.getElementById("pricing-tiers-grid");
+        grid.innerHTML = ""; // Clear
+
+        data.packages.forEach((pkg) => {
+          const isNgn = currentCurrency === "NGN";
+          const displayedPrice = isNgn ? pkg.priceNgn : pkg.priceUsd;
+          const altPrice = isNgn ? pkg.priceUsd : pkg.priceNgn;
+
+          const card = document.createElement("div");
+          card.className = `p-8 rounded-2xl flex flex-col justify-between transition-all relative ${
+            pkg.popular
+              ? "bg-brand-brown text-brand-cream shadow-xl scale-102 border-2 border-brand-cream"
+              : "bg-white text-brand-dark border border-brand-cream"
+          }`;
+
+          // Popular Tag Badge
+          const popularBadge = pkg.popular
+            ? `<span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white text-brand-brown px-3 py-1 rounded-full text-[10px] font-bold shadow">Most Popular</span>`
+            : "";
+
+          // Bullet points configuration
+          let bulletPoints = "";
+          pkg.items.forEach((item) => {
+            bulletPoints += `
+                        <li class="flex items-start gap-2.5 text-xs">
+                            <span class="shrink-0 ${pkg.popular ? "text-white" : "text-brand-brown"} font-bold">✓</span>
+                            <span>${item}</span>
+                        </li>
+                    `;
+          });
+
+          card.innerHTML = `
+                    ${popularBadge}
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-[10px] font-bold uppercase tracking-widest ${pkg.popular ? "text-brand-cream/80" : "text-brand-brown/60"}">${pkg.tierLabel}</span>
+                            <h4 class="font-serif text-xl font-bold mt-1 ${pkg.popular ? "text-white" : "text-brand-dark"}">${pkg.name}</h4>
+                        </div>
+                        <div class="py-2">
+                            <span class="font-mono text-3xl font-extrabold ${pkg.popular ? "text-white" : "text-brand-brown"}">${displayedPrice}</span>
+                            <span class="block text-[10px] ${pkg.popular ? "text-brand-cream/70" : "text-brand-brown/50"} mt-1 font-semibold">Approx. conversion: ${altPrice}</span>
+                        </div>
+                        <div class="h-[1px] ${pkg.popular ? "bg-white/10" : "bg-brand-cream"}"></div>
+                        <ul class="space-y-3 pt-2">
+                            ${bulletPoints}
+                        </ul>
+                    </div>
+                    <div class="pt-8">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdH8vCB8XQ5mckHUHUyQB3XV0URbVMavZ5cYFThHhmwrHpP3w/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-3 rounded-xl text-xs font-bold transition-all ${
+                          pkg.popular
+                            ? "bg-brand-cream text-brand-brown hover:bg-white"
+                            : "bg-brand-brown text-brand-cream hover:bg-brand-dark"
+                        }">
+                            Select ${pkg.name.split(" Package")[0]}
+                        </a>
+                    </div>
+                `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      // Filter Portfolio Items
+      function filterPortfolio(category) {
+        const items = document.querySelectorAll(".portfolio-item");
+        const filterBtns = document.querySelectorAll(".portfolio-filter-btn");
+
+        filterBtns.forEach((btn) => {
+          if (btn.getAttribute("data-category") === category) {
+            btn.className =
+              "portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-brand-brown text-brand-cream shadow transition-all";
+          } else {
+            btn.className =
+              "portfolio-filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-brand-brown border border-brand-brown/10 hover:border-brand-brown transition-all";
+          }
+        });
+
+        items.forEach((item) => {
+          if (
+            category === "all" ||
+            item.getAttribute("data-cat") === category
+          ) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+
+      // Estimator calculator price conversions dynamically (Updated brand values)
+      function calculateEstimate() {
+        const speedSelector = document.getElementById("turnaround-speed");
+        const isNgn = currentCurrency === "NGN";
+
+        // Prices
+        const priceDatabase = {
+          brand: { ngn: 130000, usd: 90 },
+          social: { ngn: 80000, usd: 55 },
+          marketing: { ngn: 120000, usd: 80 },
+          print: { ngn: 100000, usd: 70 },
+        };
+
+        let baseTotal = 0;
+
+        // Brand
+        if (document.getElementById("calc-brand").checked) {
+          baseTotal += isNgn
+            ? priceDatabase.brand.ngn
+            : priceDatabase.brand.usd;
+        }
+        // Social
+        if (document.getElementById("calc-social").checked) {
+          baseTotal += isNgn
+            ? priceDatabase.social.ngn
+            : priceDatabase.social.usd;
+        }
+        // Marketing
+        if (document.getElementById("calc-marketing").checked) {
+          baseTotal += isNgn
+            ? priceDatabase.marketing.ngn
+            : priceDatabase.marketing.usd;
+        }
+        // Print
+        if (document.getElementById("calc-print").checked) {
+          baseTotal += isNgn
+            ? priceDatabase.print.ngn
+            : priceDatabase.print.usd;
+        }
+
+        const speedFactor = parseFloat(speedSelector.value);
+        const grandTotal = baseTotal * speedFactor;
+
+        // Formatter helpers
+        const formatPrice = (val) => {
+          if (isNgn) {
+            return (
+              "₦" + val.toLocaleString("en-US", { maximumFractionDigits: 0 })
+            );
+          } else {
+            return (
+              "$" + val.toLocaleString("en-US", { maximumFractionDigits: 0 })
+            );
+          }
+        };
+
+        // Updates
+        document.getElementById("calc-base-total").innerText =
+          formatPrice(baseTotal);
+        document.getElementById("calc-speed-factor").innerText =
+          `${speedFactor}x`;
+        document.getElementById("calc-grand-total").innerText =
+          formatPrice(grandTotal);
+
+        // Sync original label display values helper (Updated Brand label values)
+        document.getElementById("label-price-brand").innerText =
+          `₦130,000 / $90`;
+        document.getElementById("label-price-social").innerText =
+          `₦80,000 / $55`;
+        document.getElementById("label-price-marketing").innerText =
+          `₦120,000 / $80`;
+        document.getElementById("label-price-print").innerText =
+          `₦100,000 / $70`;
+      }
+
+      window.onload = function () {
+        calculateEstimate();
+      };
+    </script>
+  </body>
+</html>
